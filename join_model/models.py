@@ -1,5 +1,4 @@
-from sqlalchemy import Column, ForeignKey
-from sqlalchemy.dialects.mysql import VARCHAR
+from sqlalchemy import Column, ForeignKey, VARCHAR
 from join_model.base import Base
 
 

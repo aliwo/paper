@@ -8,7 +8,7 @@ menus_in_bau = ['김치찌개']
 session = SessionMaker()
 
 for menu in menus_in_hyo:
-    for i in range(1, 201):
+    for i in range(1, 5401):
         r = Restaurant(name=f'{menu}#{i}')
         session.add(r)
         session.flush()
@@ -17,8 +17,10 @@ for menu in menus_in_hyo:
             f"SELECT {r.id}, l.id FROM locations l WHERE memo IN ('강남대로', '효령로')"
         )
 
+print('효령로 끝!')
+
 for menu in menus_in_seocho:
-    for i in range(1, 201):
+    for i in range(1, 5401):
         r = Restaurant(name=f'{menu}#{i}')
         session.add(r)
         session.flush()
@@ -27,8 +29,10 @@ for menu in menus_in_seocho:
             f"SELECT {r.id}, l.id FROM locations l WHERE memo IN ('강남대로', '서초대로')"
         )
 
+print('서초대로 끝!')
+
 for menu in menus_in_bau:
-    for i in range(1, 201):
+    for i in range(1, 5401):
         r = Restaurant(name=f'{menu}#{i}')
         session.add(r)
         session.flush()
@@ -37,6 +41,7 @@ for menu in menus_in_bau:
             f"SELECT {r.id}, l.id FROM locations l WHERE memo IN ('강남대로', '바우뫼로')"
         )
 
+print('바우뫼로 끝!')
 
 session.commit()
 session.close()
